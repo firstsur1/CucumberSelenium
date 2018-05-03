@@ -29,7 +29,7 @@ Feature: Get a loan Quotation on Zopa site
 	  And borrower select 'Get my personlised rates'
     And borrower enters invalidDetails
     |Email|Title|FirstName|LastName|Phone|DOBDay|DOBMonth|DOBYear|LoanReason|PostCode|Address|EmploymentStatus|AnnualIncome|OwnHome|MonthlyCont|Password|
-    |a1w|Mr||Smith|07921258888|01|01|1977|Car|IG2 7HE|31 HERTFORD ROAD IG2 7HE ILFORD ESSEX|Employed full-time|11000|Yes, owner outright|1100|password|
+    |a1w|Mr||Smith|abc|01|01|1977|Car|IG2|31 HERTFORD ROAD IG2 7HE ILFORD ESSEX|Employed full-time|11000|Yes, owner outright|1100|password|
     Then warning message box with relevant messages is shown
     
   

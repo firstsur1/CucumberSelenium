@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,7 +30,11 @@ public class HomePage {
 	}
 	
 	public void select_GetZopaLoan() {
-		btn_SelectZopaLoan.click();		
+		try {
+			btn_SelectZopaLoan.click();		
+		} catch(NoSuchElementException e){
+			Log.error("Element not found");
+		}
 	}
  
 	public String getTitleOfLoansPage() {		

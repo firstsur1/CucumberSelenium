@@ -1,14 +1,14 @@
 package pageObjects;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import dataProviders.ConfigFileReader;
-import managers.FileReaderManager;
+import utility.Log;
  
 public class LoanPage {
 	WebDriver driver;
@@ -28,16 +28,24 @@ public class LoanPage {
 	private WebElement rdo_SelectNoOfYears;
 	
 		
-	public void select_GetPersonlisedRates() {		
-		btn_SelectPersonlisedRates.click();	
+	public void select_GetPersonlisedRates() {	
+		try {
+			btn_SelectPersonlisedRates.click();	
+		} catch(NoSuchElementException e){
+			Log.error("Element not found");
+		}
 	}
  
 	public String getTitleOfLoanSignUpPage() {		
 		return driver.getTitle();		
 	}
 	
-	public void selectNoOfYears() {		
-		rdo_SelectNoOfYears.click();
+	public void selectNoOfYears() {	
+		try {
+			rdo_SelectNoOfYears.click();
+		} catch(NoSuchElementException e){
+			Log.error("Element not found");
+		}
 	}
 	
 	public void scrollDown() {		 

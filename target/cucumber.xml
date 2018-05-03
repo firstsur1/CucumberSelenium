@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="121.990568">
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to the Loan page" time="9.068843">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="143.229747">
+<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to the Loan page" time="8.483526">
 <system-out><![CDATA[Given borrower is on Home Page..............................................passed
 When borrower select 'Get a zopa loan'......................................passed
 Then loans page is displayed................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page for personlised rates" time="9.938581">
+<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page for personlised rates" time="11.485783">
 <system-out><![CDATA[Given borrower is on Home Page..............................................passed
 When borrower select 'Get a zopa loan'......................................passed
 And borrower select 'Get my personlised rates'..............................passed
 Then loan sign up page is displayed.........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with valid Data" time="51.994228">
+<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with valid Data" time="77.150381">
 <system-out><![CDATA[Given borrower is on Home Page..............................................passed
 When borrower select 'Get a zopa loan'......................................passed
 And borrower select 'Get my personlised rates'..............................passed
 And borrower enters valid details...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with invalid Data" time="50.988916">
+<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with invalid Data" time="46.110057">
 <system-out><![CDATA[Given borrower is on Home Page..............................................passed
 When borrower select 'Get a zopa loan'......................................passed
 And borrower select 'Get my personlised rates'..............................passed

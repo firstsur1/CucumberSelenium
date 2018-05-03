@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 4455890594,
+  "duration": 3523271851,
   "status": "passed"
 });
 formatter.scenario({
@@ -37,29 +37,29 @@ formatter.match({
   "location": "HomePageSteps.borrower_is_on_Home_Page()"
 });
 formatter.result({
-  "duration": 1726533496,
+  "duration": 1993245588,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
 });
 formatter.result({
-  "duration": 2269705119,
+  "duration": 2393704470,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.loans_page_is_displayed()"
 });
 formatter.result({
-  "duration": 16406267,
+  "duration": 16505542,
   "status": "passed"
 });
 formatter.after({
-  "duration": 600307425,
+  "duration": 556799004,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2524091487,
+  "duration": 2573435409,
   "status": "passed"
 });
 formatter.scenario({
@@ -94,36 +94,36 @@ formatter.match({
   "location": "HomePageSteps.borrower_is_on_Home_Page()"
 });
 formatter.result({
-  "duration": 1688744890,
+  "duration": 1503123069,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
 });
 formatter.result({
-  "duration": 589837985,
+  "duration": 2337044534,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
 });
 formatter.result({
-  "duration": 4593237958,
+  "duration": 4527981274,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanPageSteps.loans_sign_up_page_is_displayed()"
 });
 formatter.result({
-  "duration": 25434,
+  "duration": 22973,
   "status": "passed"
 });
 formatter.after({
-  "duration": 542643660,
+  "duration": 544175863,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2466105692,
+  "duration": 2504697116,
   "status": "passed"
 });
 formatter.scenario({
@@ -202,36 +202,36 @@ formatter.match({
   "location": "HomePageSteps.borrower_is_on_Home_Page()"
 });
 formatter.result({
-  "duration": 1648807507,
+  "duration": 1516980997,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
 });
 formatter.result({
-  "duration": 2173712888,
+  "duration": 2189701543,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
 });
 formatter.result({
-  "duration": 4425366313,
+  "duration": 4322842014,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanSignUpPageSteps.borrower_enters_details(DataTable)"
 });
 formatter.result({
-  "duration": 40628392898,
+  "duration": 65979592364,
   "status": "passed"
 });
 formatter.after({
-  "duration": 651842787,
+  "duration": 636566700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2615006321,
+  "duration": 2565746907,
   "status": "passed"
 });
 formatter.scenario({
@@ -288,12 +288,12 @@ formatter.step({
         "Mr",
         "",
         "Smith",
-        "07921258888",
+        "abc",
         "01",
         "01",
         "1977",
         "Car",
-        "IG2 7HE",
+        "IG2",
         "31 HERTFORD ROAD IG2 7HE ILFORD ESSEX",
         "Employed full-time",
         "11000",
@@ -315,39 +315,39 @@ formatter.match({
   "location": "HomePageSteps.borrower_is_on_Home_Page()"
 });
 formatter.result({
-  "duration": 1921219724,
+  "duration": 1883355226,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
 });
 formatter.result({
-  "duration": 2597767290,
+  "duration": 2630298819,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
 });
 formatter.result({
-  "duration": 4127068680,
+  "duration": 4543750456,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanSignUpPageSteps.borrower_enter_invalidDetails(DataTable)"
 });
 formatter.result({
-  "duration": 36307974924,
+  "duration": 30080478211,
   "status": "passed"
 });
 formatter.match({
   "location": "LoanSignUpPageSteps.warning_message_box_with_relevant_messages_is_shown()"
 });
 formatter.result({
-  "duration": 2777511357,
+  "duration": 3586088086,
   "status": "passed"
 });
 formatter.after({
-  "duration": 642367330,
+  "duration": 820339210,
   "status": "passed"
 });
 });

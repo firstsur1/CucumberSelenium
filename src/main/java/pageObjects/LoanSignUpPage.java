@@ -3,13 +3,13 @@ package pageObjects;
 
 	
 	import java.util.List;
-
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.validator.routines.EmailValidator;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -27,9 +27,7 @@ import utility.Log;
 		WebDriver driver;
 				
 		public LoanSignUpPage(WebDriver driver) {
-		    PageFactory.initElements(driver, this);
-		   
-		    
+		    PageFactory.initElements(driver, this);		    
 		}
 		
 		@FindBy(how = How.ID, using = "member_email") 
@@ -83,8 +81,6 @@ import utility.Log;
 		@FindBy(how = How.ID, using = "applications_loan_apply_salary") 
 		private WebElement rdbtn_AnnualIncomeBeforeTax;
 		
-	//	@FindAll(@FindBy(how = How.XPATH, using = ".//*[@id='content']/div/div[1]/div/form/fieldset[3]/div[3]/p[1]/span[2]/label")) 
-		
 		@FindAll(@FindBy(how = How.CLASS_NAME, using = "residential-status")) 
 		private List<WebElement> rdbtn_OwnHome;
 		
@@ -105,12 +101,16 @@ import utility.Log;
 		
 		
 		public void enter_Email(String email) {
-			txtbx_Email.sendKeys(email);		
-			Log.info("Email element found and email entered in the email text box");
-			if(!validateEmail(email))
-				Log.error("Email is invalid");
-			else
-				Log.info("Email is valid");
+			try {
+				txtbx_Email.sendKeys(email);		
+				Log.info("Email element found and email entered in the email text box");
+				if(!validateEmail(email))
+					Log.error("Email is invalid");
+				else
+					Log.info("Email is valid");
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public boolean validateEmail(String email) {
@@ -119,151 +119,224 @@ import utility.Log;
 		}
 		
 		public void select_Title(String title) {
-			for(WebElement titleName : rdbtn_Titles){
-				if(titleName.getText().equals(title)) {
-					titleName.click();	
-					try { Thread.sleep(3000);}
-					catch (InterruptedException e) {}
-					break;
+			try {
+				for(WebElement titleName : rdbtn_Titles){
+					if(titleName.getText().equals(title)) {
+						titleName.click();	
+						try { Thread.sleep(3000);}
+						catch (InterruptedException e) {}
+						break;
+					}
 				}
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
 			}
 		}
 		
 		public void enter_FirstName(String name) {
-			txtbx_FirstName.sendKeys(name);
+			try {
+				txtbx_FirstName.sendKeys(name);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_LastName(String lastName) {
-			txtbx_LastName.sendKeys(lastName);
+			try {
+				txtbx_LastName.sendKeys(lastName);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}	 
 		
 		
 		public void enter_Phone(String phone) {
-			txtbx_Phone.sendKeys(phone);
-			if(!validatePhone(phone))
-				Log.error("Phone is invalid");
-			else
-				Log.info("Phone is valid");
-					
+			try {
+				txtbx_Phone.sendKeys(phone);
+				if(!validatePhone(phone))
+					Log.error("Phone is invalid");
+				else
+					Log.info("Phone is valid");
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}			
 		}
 		
 		public boolean validatePhone(String phone) {
 			String regex = "^[0-9]*$";			 
 			Pattern pattern = Pattern.compile(regex);			
-			Matcher matcher = pattern.matcher(phone);
-						
+			Matcher matcher = pattern.matcher(phone);						
 			return matcher.matches();
 		}
 		
 		
 		
-		public void enter_DOB(String day,String month,String year) {
-			
+		public void enter_DOB(String day,String month,String year) {			
 			txtbx_DobDay.sendKeys(day);
 			txtbx_DobMonth.sendKeys(month);
 			txtbx_DobYear.sendKeys(year);
 		}
 		
 		public void select_LoanReason(String loanReason) {
-			for(WebElement loanReasonName : rdbtn_LoanReason){
-				if(loanReasonName.getText().equals(loanReason)) {
-					loanReasonName.click();	
-					try { Thread.sleep(3000);}
-					catch (InterruptedException e) {}
-					break;
+			try {
+				for(WebElement loanReasonName : rdbtn_LoanReason){
+					if(loanReasonName.getText().equals(loanReason)) {
+						loanReasonName.click();	
+						try { Thread.sleep(3000);}
+						catch (InterruptedException e) {}
+						break;
+					}
 				}
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
 			}
 				
 		}
 		
-		public void enter_PostCode(String postCode) {
-			txtbx_PostCode.sendKeys(postCode.toUpperCase());
-			if(!validatePostCode(postCode.toUpperCase()))
-				Log.error("Postcode is invalid");
-			else
-				Log.info("Postcode is valid");
-					
+		public boolean enter_PostCode(String postCode) {
+			boolean isValid = false;
+			try {
+				txtbx_PostCode.sendKeys(postCode.toUpperCase());
+				if(!validatePostCode(postCode.toUpperCase())) {
+					Log.error("Postcode is invalid");
+									}
+				else {
+					Log.info("Postcode is valid");
+				isValid =true;
+				}
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}	
+			return isValid;
 		}
 		
 		public boolean validatePostCode(String postCode) {
 			String regex = "^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$";			 
 			Pattern pattern = Pattern.compile(regex);			
-			Matcher matcher = pattern.matcher(postCode);
-						
+			Matcher matcher = pattern.matcher(postCode);						
 			return matcher.matches();
 		}
 		
 		
 		public void select_LookUpAddress() {
-			btn_LookUpAddress.click();			
+			try {
+				btn_LookUpAddress.click();	
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_MoveInMonth(String moveInMonth) {
-			txtbx_MoveInMonth.sendKeys(moveInMonth);
+			try {
+				txtbx_MoveInMonth.sendKeys(moveInMonth);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_MoveInYear(String moveInMonth) {
-			txtbx_MoveInYear.sendKeys(moveInMonth);
+			try {
+				txtbx_MoveInYear.sendKeys(moveInMonth);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_UseAddress(String useAddress) {
-			btn_UseAddress.sendKeys(useAddress);
+			try {
+				btn_UseAddress.sendKeys(useAddress);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void select_EmploymentStatus(String employmentStatus) {
-			for(WebElement employmentStatusName : rdbtn_EmploymentStatus){
-				if(employmentStatusName.getText().equals(employmentStatus)) {
-					employmentStatusName.click();	
-					try { Thread.sleep(3000);}
-					catch (InterruptedException e) {}
-					break;
+			try {
+				for(WebElement employmentStatusName : rdbtn_EmploymentStatus){
+					if(employmentStatusName.getText().equals(employmentStatus)) {
+						employmentStatusName.click();	
+						try { Thread.sleep(3000);}
+						catch (InterruptedException e) {}
+						break;
+					}
 				}
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
 			}
 		}
 		
 		public void select_OwnHome(String ownHome) {
-			for(WebElement ownHomeName : rdbtn_OwnHome){
-				if(ownHomeName.getText().equals(ownHome)) {
-					ownHomeName.click();	
-					try { Thread.sleep(3000);}
-					catch (InterruptedException e) {}
-					break;
+			try {
+				for(WebElement ownHomeName : rdbtn_OwnHome){
+					if(ownHomeName.getText().equals(ownHome)) {
+						ownHomeName.click();	
+						try { Thread.sleep(3000);}
+						catch (InterruptedException e) {}
+						break;
+					}
 				}
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
 			}
 		}
 		
 		public void enter_AnnualIncomeBeforeTax(String annualIncomeBeforeTax) {
-			rdbtn_AnnualIncomeBeforeTax.sendKeys(annualIncomeBeforeTax);
+			try {
+				rdbtn_AnnualIncomeBeforeTax.sendKeys(annualIncomeBeforeTax);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_MonthlyContributionToRentOrMortgage(String monthlyContributionToRentOrMortgage) {
-			txtbx_MonthlyContributionToRentOrMortgage.sendKeys(monthlyContributionToRentOrMortgage);
+			try {
+				txtbx_MonthlyContributionToRentOrMortgage.sendKeys(monthlyContributionToRentOrMortgage);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_Password(String Password) {
-			txtbx_Password.sendKeys(Password);
+			try {
+				txtbx_Password.sendKeys(Password);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void enter_ShowPassword(String showPassword) {
+			try {
 			chkbx_ShowPassword.sendKeys(showPassword);
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 		
 		public void select_Address(String address) {
-			Select select = new Select(drpdwn_Address);
-			select.selectByVisibleText(address);
-			enter_MoveInMonth("June");
-			enter_MoveInYear("2000");
-			btn_UseAddress.click();
+			try {
+				Select select = new Select(drpdwn_Address);
+				select.selectByVisibleText(address);
+				enter_MoveInMonth("June");
+				enter_MoveInYear("2000");
+				btn_UseAddress.click();
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 			
 		}
 	
 		public void display_errorMessageBox() {
-			Assert.assertTrue(msgbx_error.isDisplayed());
+			try {
+				Assert.assertTrue(msgbx_error.isDisplayed());
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		}
 	
 	
 	
 		public void fill_ValidBorrowerDetails(DataTable borrowerDetails) throws Exception {
+			
 			Thread.sleep(3000);
 			List<Map<String,String>> data =borrowerDetails.asMaps();	
 			enter_Email(data.get(0).get("Email"));
@@ -273,9 +346,11 @@ import utility.Log;
 			enter_Phone(data.get(0).get("Phone"));
 			enter_DOB(data.get(0).get("DOBDay"),data.get(0).get("DOBMonth"),data.get(0).get("DOBYear"));			
 			select_LoanReason(data.get(0).get("LoanReason"));		
-			enter_PostCode(data.get(0).get("PostCode"));
-			select_LookUpAddress();
-			Thread.sleep(3000);
+			if(enter_PostCode(data.get(0).get("PostCode"))) {
+				select_LookUpAddress();
+				Thread.sleep(3000);
+				select_Address(data.get(0).get("Address"));	
+			}
 			select_Address(data.get(0).get("Address"));		
 			select_EmploymentStatus(data.get(0).get("EmploymentStatus"));
 			select_OwnHome(data.get(0).get("OwnHome"));
@@ -295,16 +370,21 @@ import utility.Log;
 			enter_Phone(data.get(0).get("Phone"));
 			enter_DOB(data.get(0).get("DOBDay"),data.get(0).get("DOBMonth"),data.get(0).get("DOBYear"));			
 			select_LoanReason(data.get(0).get("LoanReason"));		
-			enter_PostCode(data.get(0).get("PostCode"));
-			select_LookUpAddress();
-			Thread.sleep(3000);
-			select_Address(data.get(0).get("Address"));		
+			if(enter_PostCode(data.get(0).get("PostCode"))) {
+				select_LookUpAddress();
+				Thread.sleep(3000);
+				select_Address(data.get(0).get("Address"));	
+			}
 			select_EmploymentStatus(data.get(0).get("EmploymentStatus"));
 			select_OwnHome(data.get(0).get("OwnHome"));
 			enter_AnnualIncomeBeforeTax(data.get(0).get("AnnualIncome"));
 			enter_MonthlyContributionToRentOrMortgage(data.get(0).get("MonthlyCont"));
 			enter_Password(data.get(0).get("Password"));
-			btn_CalculateMyRates.click();
+			try {
+				btn_CalculateMyRates.click();
+			} catch(NoSuchElementException e){
+				Log.error("Element not found");
+			}
 		
 		}
 
