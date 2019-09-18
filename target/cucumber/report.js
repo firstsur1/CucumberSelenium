@@ -1,353 +1,82 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/functionalTests/E2E_Tests.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/functionalTests/test.feature");
 formatter.feature({
-  "line": 2,
-  "name": "Get a loan Quotation on Zopa site",
+  "line": 1,
+  "name": "Search string on wikipedia",
   "description": "",
-  "id": "get-a-loan-quotation-on-zopa-site",
+  "id": "search-string-on-wikipedia",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 3523271851,
+  "duration": 4577962781,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 4,
-  "name": "Navigate to the Loan page",
+  "line": 3,
+  "name": "Search for a given string in English",
   "description": "",
-  "id": "get-a-loan-quotation-on-zopa-site;navigate-to-the-loan-page",
+  "id": "search-string-on-wikipedia;search-for-a-given-string-in-english",
   "type": "scenario",
   "keyword": "Scenario"
+});
+formatter.step({
+  "line": 4,
+  "name": "user is on home page",
+  "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "borrower is on Home Page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "borrower select \u0027Get a zopa loan\u0027",
+  "name": "user type a string",
   "keyword": "When "
 });
 formatter.step({
-  "line": 7,
-  "name": "loans page is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "HomePageSteps.borrower_is_on_Home_Page()"
-});
-formatter.result({
-  "duration": 1993245588,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
-});
-formatter.result({
-  "duration": 2393704470,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HomePageSteps.loans_page_is_displayed()"
-});
-formatter.result({
-  "duration": 16505542,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 556799004,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 2573435409,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 10,
-  "name": "Navigate to Loan Quotation page for personlised rates",
-  "description": "",
-  "id": "get-a-loan-quotation-on-zopa-site;navigate-to-loan-quotation-page-for-personlised-rates",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 11,
-  "name": "borrower is on Home Page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 12,
-  "name": "borrower select \u0027Get a zopa loan\u0027",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 13,
-  "name": "borrower select \u0027Get my personlised rates\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "loan sign up page is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "HomePageSteps.borrower_is_on_Home_Page()"
-});
-formatter.result({
-  "duration": 1503123069,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
-});
-formatter.result({
-  "duration": 2337044534,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
-});
-formatter.result({
-  "duration": 4527981274,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoanPageSteps.loans_sign_up_page_is_displayed()"
-});
-formatter.result({
-  "duration": 22973,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 544175863,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 2504697116,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 17,
-  "name": "Navigate to Loan Quotation page and complete application with valid Data",
-  "description": "",
-  "id": "get-a-loan-quotation-on-zopa-site;navigate-to-loan-quotation-page-and-complete-application-with-valid-data",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 18,
-  "name": "borrower is on Home Page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 19,
-  "name": "borrower select \u0027Get a zopa loan\u0027",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 20,
-  "name": "borrower select \u0027Get my personlised rates\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "borrower enters valid details",
-  "rows": [
+  "comments": [
     {
-      "cells": [
-        "Email",
-        "Title",
-        "FirstName",
-        "LastName",
-        "Phone",
-        "DOBDay",
-        "DOBMonth",
-        "DOBYear",
-        "LoanReason",
-        "PostCode",
-        "Address",
-        "EmploymentStatus",
-        "AnnualIncome",
-        "OwnHome",
-        "MonthlyCont",
-        "Password"
-      ],
-      "line": 22
+      "line": 6,
+      "value": "#\tAnd user click search button"
     },
     {
-      "cells": [
-        "a1w@gmail.com",
-        "Mr",
-        "David",
-        "Smith",
-        "07921258888",
-        "01",
-        "01",
-        "1977",
-        "Car",
-        "IG2 7HE",
-        "31 HERTFORD ROAD IG2 7HE ILFORD ESSEX",
-        "Employed full-time",
-        "11000",
-        "Yes, owner outright",
-        "1100",
-        "password"
-      ],
-      "line": 23
+      "line": 7,
+      "value": "#\tThen search results matches the search string"
     }
   ],
+  "line": 8,
+  "name": "search results is available in other languages",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "search results page in the new language includes a link to the version in English",
   "keyword": "And "
 });
 formatter.match({
-  "location": "HomePageSteps.borrower_is_on_Home_Page()"
+  "location": "HomePageSteps.user_is_on_home_page()"
 });
 formatter.result({
-  "duration": 1516980997,
+  "duration": 559417737,
   "status": "passed"
 });
 formatter.match({
-  "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
+  "location": "HomePageSteps.user_type_a_string()"
 });
 formatter.result({
-  "duration": 2189701543,
-  "status": "passed"
+  "duration": 424614283,
+  "error_message": "org.openqa.selenium.InvalidSelectorException: The xpath expression \u0027//label[contains(\"Search Wikipedia\")]//following::input\u0027 cannot be evaluated or does notresult in a WebElement (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027LAPTOP-HLHJ75DV\u0027, ip: \u0027192.168.0.16\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002710.0.1\u0027\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26158/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}\nSession ID: 051a48ec-955e-49f2-acb5-a3f797e70629\n*** Element info: {Using\u003dxpath, value\u003d//label[contains(\"Search Wikipedia\")]//following::input}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy20.sendKeys(Unknown Source)\r\n\tat pageObjects.HomePage.typeString(HomePage.java:56)\r\n\tat stepDefinitions.HomePageSteps.user_type_a_string(HomePageSteps.java:28)\r\n\tat ✽.When user type a string(src/test/resources/functionalTests/test.feature:5)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
+  "location": "HomePageSteps.search_results_is_available_in_other_languages()"
 });
 formatter.result({
-  "duration": 4322842014,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "LoanSignUpPageSteps.borrower_enters_details(DataTable)"
+  "location": "HomePageSteps.search_results_page_in_the_new_language_includes_a_link_to_the_version_in_English()"
 });
 formatter.result({
-  "duration": 65979592364,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 636566700,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 2565746907,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 26,
-  "name": "Navigate to Loan Quotation page and complete application with invalid Data",
-  "description": "",
-  "id": "get-a-loan-quotation-on-zopa-site;navigate-to-loan-quotation-page-and-complete-application-with-invalid-data",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 27,
-  "name": "borrower is on Home Page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 28,
-  "name": "borrower select \u0027Get a zopa loan\u0027",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 29,
-  "name": "borrower select \u0027Get my personlised rates\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 30,
-  "name": "borrower enters invalidDetails",
-  "rows": [
-    {
-      "cells": [
-        "Email",
-        "Title",
-        "FirstName",
-        "LastName",
-        "Phone",
-        "DOBDay",
-        "DOBMonth",
-        "DOBYear",
-        "LoanReason",
-        "PostCode",
-        "Address",
-        "EmploymentStatus",
-        "AnnualIncome",
-        "OwnHome",
-        "MonthlyCont",
-        "Password"
-      ],
-      "line": 31
-    },
-    {
-      "cells": [
-        "a1w",
-        "Mr",
-        "",
-        "Smith",
-        "abc",
-        "01",
-        "01",
-        "1977",
-        "Car",
-        "IG2",
-        "31 HERTFORD ROAD IG2 7HE ILFORD ESSEX",
-        "Employed full-time",
-        "11000",
-        "Yes, owner outright",
-        "1100",
-        "password"
-      ],
-      "line": 32
-    }
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 33,
-  "name": "warning message box with relevant messages is shown",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "HomePageSteps.borrower_is_on_Home_Page()"
-});
-formatter.result({
-  "duration": 1883355226,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HomePageSteps.user_select_Get_a_zopa_loan()"
-});
-formatter.result({
-  "duration": 2630298819,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoanPageSteps.borrower_select_Get_my_personlised_rates()"
-});
-formatter.result({
-  "duration": 4543750456,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoanSignUpPageSteps.borrower_enter_invalidDetails(DataTable)"
-});
-formatter.result({
-  "duration": 30080478211,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoanSignUpPageSteps.warning_message_box_with_relevant_messages_is_shown()"
-});
-formatter.result({
-  "duration": 3586088086,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 820339210,
+  "duration": 32000,
   "status": "passed"
 });
 });

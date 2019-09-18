@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
  
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/functionalTests/E2E_Tests.feature",
+		features = "src/test/resources/functionalTests/test.feature",
 		glue= {"stepDefinitions"},
 		monochrome=true,
 		strict=true,

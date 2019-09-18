@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="143.229747">
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to the Loan page" time="8.483526">
-<system-out><![CDATA[Given borrower is on Home Page..............................................passed
-When borrower select 'Get a zopa loan'......................................passed
-Then loans page is displayed................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page for personlised rates" time="11.485783">
-<system-out><![CDATA[Given borrower is on Home Page..............................................passed
-When borrower select 'Get a zopa loan'......................................passed
-And borrower select 'Get my personlised rates'..............................passed
-Then loan sign up page is displayed.........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with valid Data" time="77.150381">
-<system-out><![CDATA[Given borrower is on Home Page..............................................passed
-When borrower select 'Get a zopa loan'......................................passed
-And borrower select 'Get my personlised rates'..............................passed
-And borrower enters valid details...........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Get a loan Quotation on Zopa site" name="Navigate to Loan Quotation page and complete application with invalid Data" time="46.110057">
-<system-out><![CDATA[Given borrower is on Home Page..............................................passed
-When borrower select 'Get a zopa loan'......................................passed
-And borrower select 'Get my personlised rates'..............................passed
-And borrower enters invalidDetails..........................................passed
-Then warning message box with relevant messages is shown....................passed
-]]></system-out>
-</testcase>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="5.562027">
+    <testcase classname="Search string on wikipedia" name="Search for a given string in English" time="5.562027">
+        <failure message="org.openqa.selenium.InvalidSelectorException: The xpath expression '//label[contains(&quot;Search Wikipedia&quot;)]//following::input' cannot be evaluated or does notresult in a WebElement (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html&#10;Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'&#10;System info: host: 'LAPTOP-HLHJ75DV', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'&#10;Driver info: org.openqa.selenium.ie.InternetExplorerDriver&#10;Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26158/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}&#10;Session ID: 051a48ec-955e-49f2-acb5-a3f797e70629&#10;*** Element info: {Using=xpath, value=//label[contains(&quot;Search Wikipedia&quot;)]//following::input}&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;&#10;&#9;at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;&#10;&#9;at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)&#13;&#10;&#9;at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)&#13;&#10;&#9;at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)&#13;&#10;&#9;at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)&#13;&#10;&#9;at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)&#13;&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#13;&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)&#13;&#10;&#9;at org.openqa.selenium.By$ByXPath.findElement(By.java:361)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#13;&#10;&#9;at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)&#13;&#10;&#9;at pageObjects.HomePage.typeString(HomePage.java:56)&#13;&#10;&#9;at stepDefinitions.HomePageSteps.user_type_a_string(HomePageSteps.java:28)&#13;&#10;&#9;at ✽.When user type a string(src/test/resources/functionalTests/test.feature:5)&#13;&#10;">
+            <![CDATA[Given user is on home page..................................................passed
+When user type a string.....................................................failed
+And search results is available in other languages..........................skipped
+And search results page in the new language includes a link to the version in English.skipped
+
+StackTrace:
+org.openqa.selenium.InvalidSelectorException: The xpath expression '//label[contains("Search Wikipedia")]//following::input' cannot be evaluated or does notresult in a WebElement (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'LAPTOP-HLHJ75DV', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26158/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: 051a48ec-955e-49f2-acb5-a3f797e70629
+*** Element info: {Using=xpath, value=//label[contains("Search Wikipedia")]//following::input}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at pageObjects.HomePage.typeString(HomePage.java:56)
+	at stepDefinitions.HomePageSteps.user_type_a_string(HomePageSteps.java:28)
+	at ✽.When user type a string(src/test/resources/functionalTests/test.feature:5)
+]]>
+        </failure>
+    </testcase>
 </testsuite>

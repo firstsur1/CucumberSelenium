@@ -1,10 +1,13 @@
 package managers;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import enums.DriverType;
 import enums.EnvironmentType;
  
@@ -49,7 +52,8 @@ public class WebDriverManager {
     		break;
         case INTERNETEXPLORER : 
         	System.setProperty(IE_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
-        	
+        	DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();        	   
+        	capabilities.setCapability("initialBrowserUrl", "https://my-page:9443");
         	driver = new InternetExplorerDriver();
     		break;
         }
